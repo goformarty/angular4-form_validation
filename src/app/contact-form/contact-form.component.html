@@ -1,17 +1,10 @@
-<form>
+<form #f = "ngForm">
 
   <div class="form-group">
 
     <label for="name">Course Name:</label>
-    <input name="name"
-           ngModel  
-           #name="ngModel"
-           
-           type="text" 
-           id="name" 
-           class="form-control" 
-           required
-           minlength="3"/>
+    <input name="name" ngModel #name="ngModel" type="text" id="name" class="form-control" required minlength="3" />
+
     <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
       <div *ngIf="name.errors.required">
         Name field is required.
@@ -28,14 +21,18 @@
     <label for="category">
       Category:
     </label>
-    <select name="category" 
-            id="category" 
-            class="form-control">
-        <option value=""></option>
-        <option *ngFor="let category of categories" value="category.id">
-          {{category.name}}
-        </option>
-      </select>
+    <select required name="category" ngModel #category="ngModel" id="category" class="form-control">
+      <option value=""></option>
+      <option *ngFor="let c of categories" [value]="c.id">
+        {{c.name}}
+      </option>
+    </select>
+
+    <div *ngIf="category.touched && category.invalid" class="alert alert-danger">
+      <div *ngIf="name.errors.required">
+        Category field is required.
+      </div>
+    </div>
 
   </div>
 
@@ -47,6 +44,10 @@
     </label>
 
   </div>
+
+  <p>
+    {{f.value | json}}
+  </p>
 
   <button class="btn btn-primary">
     Create
