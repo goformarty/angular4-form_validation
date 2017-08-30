@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot()
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

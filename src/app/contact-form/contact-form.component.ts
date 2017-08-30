@@ -13,5 +13,6 @@ export class ContactFormComponent {
     { id: 3, name: 'Languages' },
     { id: 4, name: 'Science' }
   ];
+  name = 'Meow';
 }
 
