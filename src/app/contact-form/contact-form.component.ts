@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent {
-  log(x) {
-    console.log(x);
-  }
+  categories = [
+    { id: 1, name: 'Development' },
+    { id: 2, name: 'Art' },
+    { id: 3, name: 'Languages' },
+    { id: 4, name: 'Science' }
+  ];
 }
 
